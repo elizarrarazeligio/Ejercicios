@@ -22,6 +22,6 @@ const input1 = ["Algebra", "History", "Geometry", "English"];
 const input2 = ["Algebra", "history", "Geometry", "english"];
 const input3 = ["Alg#bra", "$istory", "Geom^try", "**english"];
 
-//console.log(sorter(input1));
-//console.log(sorter(input2));
+console.log(sorter(input1));
+console.log(sorter(input2));
 console.log(sorter(input3));
