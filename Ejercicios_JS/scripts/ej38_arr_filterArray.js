@@ -14,6 +14,14 @@ const filter = function (arr, fn) {
   });
 };
 
+const filter2 = function (arr, fn) {
+  let res = [];
+  for (let i = 0; i < arr.length; i++) {
+    fn(arr[i], i) ? res.push(arr[i]) : 0;
+  }
+  return res;
+};
+
 const arr1 = [0, 10, 20, 30];
 const arr2 = [1, 2, 3];
 const arr3 = [-2, -1, 0, 1, 2];
@@ -32,4 +40,8 @@ function plusOne(n) {
 
 console.log(filter(arr1, greaterThan10));
 console.log(filter(arr2, firstIndex));
+console.log(filter(arr3, plusOne));
+
+console.log(filter2(arr1, greaterThan10));
+console.log(filter2(arr2, firstIndex));
 console.log(filter(arr3, plusOne));

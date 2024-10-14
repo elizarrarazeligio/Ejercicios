@@ -9,6 +9,14 @@ const map = function (arr, fn) {
   });
 };
 
+const map2 = function (arr, fn) {
+  let res = [];
+  for (let i = 0; i < arr.length; i++) {
+    res[i] = fn(arr[i], i);
+  }
+  return res;
+};
+
 arr = [1, 2, 3, 4, 5, 6, 7, 8];
 function plus(n, i) {
   return n + i;
@@ -17,3 +25,5 @@ function plus(n, i) {
 }
 
 console.log(map(arr, plus));
+
+console.log(map2(arr, plus));
