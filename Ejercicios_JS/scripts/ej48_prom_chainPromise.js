@@ -15,3 +15,9 @@ function thirdAction(value) {
 }
 
 newPromise.then(firstAction).then(secondAction).then(thirdAction);
+
+const secondPromise = new Promise(function (resolve, reject) {
+  reject("Un Mississippi");
+});
+
+secondPromise.then(firstAction).then(secondAction).catch(thirdAction);
