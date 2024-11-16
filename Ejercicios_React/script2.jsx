@@ -1,3 +1,4 @@
+// Detectores de eventos
 function handleClick() {
   console.log("¡No hagas clic en mi!");
 }

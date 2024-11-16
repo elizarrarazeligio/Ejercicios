@@ -15,3 +15,19 @@ button {
   padding: 12px;
   margin: 10px;
 }
+
+ul {
+  list-style-type: circle;
+}
+
+li {
+  margin: 20px 0;
+}
+
+li b {
+  display: block;
+}
+
+li i {
+  font-size: smaller;
+}
