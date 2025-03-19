@@ -46,9 +46,18 @@ class Set {
   size() {
     return this.length;
   }
+
+  union(set) {
+    const newSet = new Set();
+    this.values().forEach((value) => newSet.add(value));
+    set.values().forEach((value) => newSet.add(value));
+    return newSet;
+  }
 }
 
 const set = new Set();
+const setA = new Set();
+const setB = new Set();
 
 console.log(set.add(2));
 console.log(set.add(3));
@@ -64,3 +73,14 @@ console.log(set.remove(5));
 console.log(set.remove(2));
 console.log(set.values());
 console.log(set.size());
+
+setA.add("a");
+setA.add("b");
+setA.add("c");
+console.log(setA.values());
+
+setB.add("c");
+setB.add("d");
+console.log(setB.values());
+
+console.log(setA.union(setB));
