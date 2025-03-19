@@ -53,6 +53,14 @@ class Set {
     set.values().forEach((value) => newSet.add(value));
     return newSet;
   }
+
+  intersection(set) {
+    const newSet = new Set();
+    this.values().forEach((value) => {
+      if (set.values().includes(value)) newSet.add(value);
+    });
+    return newSet;
+  }
 }
 
 const set = new Set();
@@ -83,4 +91,5 @@ setB.add("c");
 setB.add("d");
 console.log(setB.values());
 
-console.log(setA.union(setB));
+console.log(setA.union(setB).values());
+console.log(setA.intersection(setB).values());
