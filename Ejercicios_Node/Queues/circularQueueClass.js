@@ -1,3 +1,7 @@
+/* The circular queue should provide enqueue and dequeue methods which allow you to read from and write to the queue.
+The class itself should also accept an integer argument which you can use to specify the size of the queue when created.
+*/
+
 class CircularQueue {
   constructor(size) {
     this.queue = [];
