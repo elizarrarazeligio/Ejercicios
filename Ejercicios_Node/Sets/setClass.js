@@ -69,6 +69,12 @@ class Set {
     });
     return newSet;
   }
+
+  isSubsetOf(set) {
+    return this.values().every((value) => {
+      return set.values().includes(value);
+    });
+  }
 }
 
 const set = new Set();
@@ -102,3 +108,4 @@ console.log(setB.values());
 console.log(setA.union(setB).values());
 console.log(setA.intersection(setB).values());
 console.log(setA.difference(setB).values());
+console.log(setA.isSubsetOf(setB));
