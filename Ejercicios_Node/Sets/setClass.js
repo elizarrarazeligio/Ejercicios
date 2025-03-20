@@ -61,6 +61,14 @@ class Set {
     });
     return newSet;
   }
+
+  difference(set) {
+    const newSet = new Set();
+    this.values().forEach((value) => {
+      if (!set.values().includes(value)) newSet.add(value);
+    });
+    return newSet;
+  }
 }
 
 const set = new Set();
@@ -93,3 +101,4 @@ console.log(setB.values());
 
 console.log(setA.union(setB).values());
 console.log(setA.intersection(setB).values());
+console.log(setA.difference(setB).values());
