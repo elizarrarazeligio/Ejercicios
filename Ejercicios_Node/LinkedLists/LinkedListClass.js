@@ -25,7 +25,7 @@ function LinkedList() {
     const node = new Node(element);
     if (head) {
       let current = head;
-      if (current.next !== null) {
+      while (current.next !== null) {
         current = current.next;
       }
       current.next = node;
@@ -35,11 +35,57 @@ function LinkedList() {
     length++;
     // Only change code above this line
   };
+
+  this.remove = function (element) {
+    if (head.element != element) {
+      let current = head;
+      while (current.next.element != element) {
+        current = current.next;
+      }
+      current.next = current.next.next;
+    } else {
+      head = head.next;
+    }
+    length--;
+  };
+
+  this.remove2 = function (element) {
+    if (head.element === element) {
+      head = head.next;
+      return length--;
+    }
+    let previous = head;
+    while (previous) {
+      let current = previous.next;
+      if (current) {
+        if (current.element === element) {
+          previous.next = current.next;
+          return length--;
+        }
+      }
+      previous = current;
+    }
+  };
 }
 
 const linkedList = new LinkedList();
 linkedList.add("Kitten");
 console.log(linkedList.head());
 linkedList.add("Puppy");
+console.log(linkedList.head());
+console.log(linkedList.size());
+linkedList.add("Cat");
+linkedList.add("Dog");
+console.log(linkedList.size());
+console.log(linkedList.head());
+linkedList.remove("Puppy");
+console.log(linkedList.head());
+linkedList.remove("Cat");
+console.log(linkedList.head());
+console.log(linkedList.size());
+linkedList.remove2("Dog");
+console.log(linkedList.head());
+console.log(linkedList.size());
+linkedList.remove2("Kitten");
 console.log(linkedList.head());
 console.log(linkedList.size());
