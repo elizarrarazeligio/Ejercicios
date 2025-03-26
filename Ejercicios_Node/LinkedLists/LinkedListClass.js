@@ -66,6 +66,40 @@ function LinkedList() {
       previous = current;
     }
   };
+
+  this.isEmpty = function () {
+    return head == null;
+  };
+
+  this.indexOf = function (element) {
+    let current = head;
+    let index = 0;
+
+    while (current.element != element && current.next != null) {
+      current = current.next;
+      index++;
+    }
+
+    if (current.element == element) {
+      return index;
+    }
+    return -1;
+  };
+
+  this.elementAt = function (index) {
+    let current = head;
+    let currentIndex = 0;
+
+    while (currentIndex != index && current != null) {
+      current = current.next;
+      currentIndex++;
+    }
+
+    if (current) {
+      return current.element;
+    }
+    return undefined;
+  };
 }
 
 const linkedList = new LinkedList();
@@ -77,6 +111,9 @@ console.log(linkedList.size());
 linkedList.add("Cat");
 linkedList.add("Dog");
 console.log(linkedList.size());
+console.log(linkedList.indexOf("Dog"));
+console.log(linkedList.indexOf("Doggy"));
+console.log(linkedList.elementAt(2));
 console.log(linkedList.head());
 linkedList.remove("Puppy");
 console.log(linkedList.head());
@@ -89,3 +126,4 @@ console.log(linkedList.size());
 linkedList.remove2("Kitten");
 console.log(linkedList.head());
 console.log(linkedList.size());
+console.log(linkedList.isEmpty());
